@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- This is the package that ONLY exists on the second feed
+         (ContosoInternal). packageSourceMapping routes anything
+         matching "Internal.*" there. If ContosoInternal isn't
+         reachable/configured, restore fails on THIS reference with
+         NU1100, even though Contoso.Core / Contoso.Utils above
+         resolve fine. That's what makes this a genuine split-feed
+         reproduction rather than a single-feed one. -->
+    <PackageReference Include="Internal.Contoso.Secrets" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+# IMPORTANT for this repro: obj/ contains project.assets.json, the resolved
+# NuGet lockfile. If this gets committed, Snyk (and the CLI) can read the
+# dependency graph straight off disk without ever running its own restore --
+# which silently defeats the whole point of testing feed reachability.
+bin/
+obj/
+artifacts/
+*.nupkg

@@ -1,0 +1,16 @@
+<Project>
+  <ItemGroup>
+    <!-- Contoso.Core and Contoso.Utils: published to the MAIN feed
+         (ContosoArtifactory) only. They do not exist on nuget.org. -->
+    <PackageVersion Include="Contoso.Core" Version="1.0.0" />
+    <PackageVersion Include="Contoso.Utils" Version="1.0.0" />
+
+    <!-- Internal.Contoso.Secrets: published ONLY to the SECOND feed
+         (ContosoInternal), reached via the "Internal.*" package source
+         mapping rule. This is the package that proves the split-feed
+         routing is actually being honored: if Snyk (or a local
+         restore) can't reach ContosoInternal, resolution fails here
+         specifically, not on the other two packages. -->
+    <PackageVersion Include="Internal.Contoso.Secrets" Version="1.0.0" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <!-- Building an Exe normally pulls in Microsoft.NETCore.App.Host.<rid>,
+         a runtime-pack package that comes from nuget.org. Since nuget.config
+         has <clear/> with everything mapped to our private feeds, that
+         package can't resolve (NU1101) and masks the actual test we care
+         about. UseAppHost=false skips the native launcher entirely: we
+         don't need one for a stub app that only exists to prove restore
+         works. -->
+    <UseAppHost>false</UseAppHost>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- No Version attribute here: CPM supplies it from
+         Directory.Packages.props. Resolves via the main feed
+         (packageSourceMapping pattern "*"). -->
+    <PackageReference Include="Contoso.Core" />
+  </ItemGroup>
+
+</Project>
