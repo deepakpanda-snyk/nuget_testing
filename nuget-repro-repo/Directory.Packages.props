@@ -12,8 +12,8 @@
          restore) can't reach ContosoInternal, resolution fails here
          specifically, not on the other two packages. -->
     <PackageVersion Include="Internal.Contoso.Secrets" Version="1.0.0" />
-  <PackageVersion Include="Newtonsoft.Json" Version="9.0.1" />
-  <PackageVersion Include="log4net" Version="2.0.8" />
-  <PackageVersion Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
+    <PackageVersion Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageVersion Include="log4net" Version="2.0.8" />
+    <PackageVersion Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
   </ItemGroup>
 </Project>
