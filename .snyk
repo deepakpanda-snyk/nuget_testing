@@ -1,0 +1,8 @@
+version: v1.25.0
+ignore:
+  SNYK-DOTNET-LOG4NET-568897:
+    - '*':
+        reason: 'testing ignore 2'
+  SNYK-DOTNET-LOG4NET-16032174:
+    - '*':
+        reason: 'testing ignore 3'
